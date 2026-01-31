@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="left-panel">
+            <h1>🌤️ Weather App</h1>
+            
+            <button class="location-btn" onclick="getLocationWeather()">📍 Use My Location</button>
+            
+            <div class="search-box">
+                <input type="text" id="cityInput" placeholder="Enter city name..." onkeypress="handleKeyPress(event)">
+                <button onclick="searchWeather()">Search</button>
+            </div>
+
+            <div class="error" id="error"></div>
+            <div class="loading" id="loading">Loading...</div>
+
+            <div class="quick-cities">
+                <h3>Quick Access</h3>
+                <div class="city-tags">
+                    <button class="city-tag" onclick="searchCity('Chennai')">Chennai</button>
+                    <button class="city-tag" onclick="searchCity('Mumbai')">Mumbai</button>
+                    <button class="city-tag" onclick="searchCity('Delhi')">Delhi</button>
+                    <button class="city-tag" onclick="searchCity('Bangalore')">Bangalore</button>
+                    <button class="city-tag" onclick="searchCity('Kolkata')">Kolkata</button>
+                    <button class="city-tag" onclick="searchCity('Hyderabad')">Hyderabad</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="right-panel">
+            <div class="weather-info" id="weatherInfo">
+                <div class="weather-main">
+                    <div class="weather-icon" id="weatherIcon"></div>
+                    <div class="temp-section">
+                        <div class="temperature" id="temperature"></div>
+                        <div class="description" id="description"></div>
+                    </div>
+                </div>
+                
+                <div class="location-date">
+                    <div class="location" id="location"></div>
+                    <div class="date" id="date"></div>
+                </div>
+
+                <div class="details">
+                    <div class="detail-item">
+                        <div class="detail-label">Feels Like</div>
+                        <div class="detail-value" id="feelsLike"></div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="detail-label">Humidity</div>
+                        <div class="detail-value" id="humidity"></div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="detail-label">Wind Speed</div>
+                        <div class="detail-value" id="windSpeed"></div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="detail-label">Pressure</div>
+                        <div class="detail-value" id="pressure"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
